@@ -6,3 +6,5 @@ This is my journey to become fluent enough with Java to land a software engineer
 <b>ArrayLists</b>
 - booleanArraySort
 - removeRepeatedArrayList
+- containsDuplicates
+- validAnagram
