@@ -8,5 +8,6 @@ This is my journey to become fluent enough with Java to land a software engineer
 - removeRepeatedArrayList
 - containsDuplicates
 - validAnagram
+  - groupAnagram
 - buySellStockOnce
 
