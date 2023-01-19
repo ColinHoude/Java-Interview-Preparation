@@ -8,8 +8,9 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Remove Repeated ArrayList
 - Contains Duplicates
 - Valid Anagram
-  - Group Anagram
+  
 - Buy Sell Stock Once
 
 <b>HashMaps</b>
 - Top K Frequent Elements 
+- Group Anagram
