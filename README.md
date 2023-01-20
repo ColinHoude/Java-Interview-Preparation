@@ -10,6 +10,7 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Valid Anagram
 - Buy Sell Stock Once
 - Product of Array Except Self (not finished)
+- Permutate Array
 
 <b>HashMaps</b>
 - Top K Frequent Elements 
