@@ -41,7 +41,7 @@ public class Main {
         // multiply left side
         int start = 1;
         for (int i = 0; i < x.size(); i++) {
-            
+
         }
 
         return new ArrayList<>();
