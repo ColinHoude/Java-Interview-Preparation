@@ -11,6 +11,7 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Buy Sell Stock Once
 - Product of Array Except Self (not finished)
 - Permutate Array
+- Computing Alteration 
 
 <b>HashMaps</b>
 - Top K Frequent Elements 
