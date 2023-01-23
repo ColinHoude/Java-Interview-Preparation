@@ -16,3 +16,7 @@ This is my journey to become fluent enough with Java to land a software engineer
 <b>HashMaps</b>
 - Top K Frequent Elements 
 - Group Anagram
+
+<b>Stack</b>
+- Min Stack (self implimented Stack class) 
+- Valid Parentheses 
