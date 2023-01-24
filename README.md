@@ -22,3 +22,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Valid Parentheses 
 - Reverse Polish Notation
 - Generate Parentheses
+- Daily Temperature (Monotonic Stack -- unfinished)
