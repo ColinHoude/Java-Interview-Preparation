@@ -21,3 +21,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Min Stack (self implimented Stack class) 
 - Valid Parentheses 
 - Reverse Polish Notation
+- Generate Parentheses
