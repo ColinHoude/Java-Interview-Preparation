@@ -21,5 +21,5 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Min Stack (self implimented Stack class) 
 - Valid Parentheses 
 - Reverse Polish Notation
-- Generate Parentheses
-- Daily Temperature (Monotonic Stack -- unfinished)
+- Generate Parenthese (recursion) 
+- Daily Temperature (Monotonic Stack -- Study this one)
