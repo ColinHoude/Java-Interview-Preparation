@@ -12,6 +12,11 @@ public class Main {
         BruteForce(arr);
         BruteForce(arr2);
         BruteForce(arr3);
+        System.out.println("--------------");
+        usingStack(arr);
+        usingStack(arr2);
+        usingStack(arr3);
+
     }
 
 
@@ -37,9 +42,22 @@ public class Main {
         System.out.println(xyz);
     }
 
-    public static void usingStack(List<Integer> x){
+    public static void usingStack(List<Integer> x) {
         // this solution uses a monotonic Stack
         // this is the first time I have heard of a monotonic Stack
+        Stack<Integer> st = new Stack<>();
+        List<Integer> res = new ArrayList<>();
+        for (int i = x.size()-1; i >= 0; i--) {
+            while (!st.isEmpty() && x.get(i) > x.get(st.peek())) {
+                st.pop();
+            }
+            if (!st.isEmpty()) {
+                res.add(st.peek() - i);
+            }
+            st.push(i);
+        }
+        System.out.println(res);
     }
+
 }
 
