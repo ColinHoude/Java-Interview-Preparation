@@ -26,3 +26,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Car Fleet
 
 <b>TwoPointers</b>
+- Two Sum 2
