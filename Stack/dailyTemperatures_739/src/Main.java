@@ -16,7 +16,7 @@ public class Main {
         usingStack(arr);
         usingStack(arr2);
         usingStack(arr3);
-
+        //stackTester();
     }
 
 
@@ -57,6 +57,21 @@ public class Main {
             st.push(i);
         }
         System.out.println(res);
+    }
+
+    public static void stackTester(){
+        // I am just testing all the stack calls here
+        Random rand = new Random();
+        Stack<Integer> sta = new Stack<>();
+        for (int i = 0; i < 7; i++) {
+            sta.push(rand.nextInt(1,1000));
+        }
+
+        System.out.println(sta);
+        System.out.println(sta.peek());
+        System.out.println(sta.get(2));
+        sta.pop();
+        System.out.println(sta);
     }
 
 }
