@@ -27,3 +27,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 
 <b>TwoPointers</b>
 - Two Sum 2
+- Three Sum
