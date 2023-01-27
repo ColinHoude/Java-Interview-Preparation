@@ -12,6 +12,8 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Product of Array Except Self (not finished)
 - Permutate Array
 - Computing Alteration 
+- Bubble Sort (slow)
+- Selection Sort (slow)
 
 <b>HashMaps</b>
 - Top K Frequent Elements 
