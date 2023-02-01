@@ -24,8 +24,9 @@ public class Main {
             System.out.println();
         }
 
-        int derp = retRow(arr, target);
-        System.out.println(derp);
+        //int derp = retRow(arr, target);
+        //System.out.println(derp);
+        binSearchBruteForce(arr, target);
 
     }
 
@@ -57,5 +58,21 @@ public class Main {
 
         return columnNum;
 
+    }
+
+    // this is the brute force method of this
+    public static void binSearchBruteForce(List<List<Integer>> x, int target){
+        System.out.println("Looking for value: " + target + "...");
+        for (int i = 0; i < x.size(); i++) {
+            for (int j = 0; j < x.get(i).size(); j++) {
+                if(x.get(i).get(j) == target){
+                    System.out.println("Found value at [" + i + "][" + j + "]");
+                    System.out.println("compared " + ((i*5) + j) + " numbers...");
+                    return;
+                }
+            }
+        }
+
+        System.out.println("never found value...");
     }
 }

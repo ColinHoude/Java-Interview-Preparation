@@ -16,6 +16,7 @@ public class Main {
         binSearch(arr, rand.nextInt(1,100));
     }
 
+    // binary search of this function
     public static void binSearch(List<Integer> x, int target){
         System.out.println("Looking for value: " + target + "...");
         int start = 0;
@@ -33,5 +34,18 @@ public class Main {
                 end = mid -1;
         }
         System.out.println("value never found");
+    }
+
+    // brute force method of this function
+    public static void binSearchBruteForce(List<Integer> x, int target){
+        System.out.println("Looking for value: " + target + "...");
+        for (int i = 0; i < x.size(); i++) {
+            if(x.get(i) == target){
+                System.out.println("Found target at: [" + i + "]");
+                return;
+            }
+        }
+
+        System.out.println("Never found...");
     }
 }
