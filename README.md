@@ -34,3 +34,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 <b>BinarySearchFunctions</b>
 - Binary Search Fundamental
 - 2D Matrix Binary Search
+- Koko Eating Bananas
