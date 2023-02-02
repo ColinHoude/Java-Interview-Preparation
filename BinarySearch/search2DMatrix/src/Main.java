@@ -18,49 +18,52 @@ public class Main {
         }
 
         for (int i = 0; i < row; i++) {
+            System.out.print("[");
             for (int j = 0; j < column; j++) {
-                System.out.print(arr.get(i).get(j) + " ");
+                System.out.print(arr.get(i).get(j));
+                if(j+1 != column){
+                    System.out.print(", ");
+                }
             }
+            System.out.print("]");
             System.out.println();
         }
 
         //int derp = retRow(arr, target);
         //System.out.println(derp);
-        binSearchBruteForce(arr, target);
+        //binSearchBruteForce(arr, target);
+        binSearchCorrect(arr, target);
 
     }
 
-    public static int retRow(List<List<Integer>> x, int target){
-        int columnNum = 0;
-        System.out.println("searching for target: " + target);
-        int start = 0;
-        int end = x.get(0).size()-1;
-        while(start < end){
-            int mid = start + (end - start) /2;
-            if(x.get(mid).get(end) == target){
-                System.out.println("found " + target + " at [" + mid + "]");
-                break;
+    public static void binSearchCorrect(List<List<Integer>> x, int target){
+        System.out.println("Looking for value: " + target + "...");
+        int n = x.size(); // column size
+        int m = x.get(0).size(); // number of rows
+        int low = 0;
+        int high = m*n -1;
+        int comparisons = 0;
+        while(low <= high){
+            comparisons++;
+            int mid = low + (high - low) /2;
+            if(x.get(mid/m).get(mid%m) == target){
+                System.out.println("Found the number !!");
+                System.out.println("compared " + comparisons + " numbers...");
+                return;
             }
-
-            else if (x.get(mid).get(x.get(mid).size()-1) < target && x.get(mid+1).get(x.get(mid+1).size()-1) > target){
-                // this is the return row
-                columnNum = mid+1;
-                break;
-            }
-
-            else if (x.get(mid).get(x.get(mid).size()-1) < target && x.get(mid+1).get(x.get(mid+1).size()-1) < target){
-                start = mid + 1;
+            else if (x.get(mid/m).get(mid%m) < target){
+                low = mid + 1;
             }
 
             else
-                end = mid -1;
+                high = mid -1;
         }
-
-        return columnNum;
-
+        System.out.println("compared " + comparisons + " numbers...");
+        System.out.println("EW EW EW TARGET NEVER FOUND...");
     }
 
     // this is the brute force method of this
+    // time complexity O(N*M) -- essentially O(N^2)
     public static void binSearchBruteForce(List<List<Integer>> x, int target){
         System.out.println("Looking for value: " + target + "...");
         for (int i = 0; i < x.size(); i++) {
