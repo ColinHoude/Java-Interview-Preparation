@@ -35,3 +35,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Binary Search Fundamental
 - 2D Matrix Binary Search
 - Koko Eating Bananas
+- Find Minimum in Rotated Sorted Array (this one was interesting)
