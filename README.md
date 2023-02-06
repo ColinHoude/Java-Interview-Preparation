@@ -36,3 +36,7 @@ This is my journey to become fluent enough with Java to land a software engineer
 - 2D Matrix Binary Search
 - Koko Eating Bananas
 - Find Minimum in Rotated Sorted Array (this one was interesting)
+
+<b>SlidingWindow</b>
+- Buy Sell Stock Once (doesnt use HashMap)
+- Longest Unique Substring
