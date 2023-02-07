@@ -40,3 +40,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 <b>SlidingWindow</b>
 - Buy Sell Stock Once (doesnt use HashMap)
 - Longest Unique Substring
+- Longest Repeating Character Replacement (can be optimized)
