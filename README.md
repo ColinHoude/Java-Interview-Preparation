@@ -41,3 +41,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Buy Sell Stock Once (doesnt use HashMap)
 - Longest Unique Substring
 - Longest Repeating Character Replacement (can be optimized)
+- Short Permutation in a Long String (HashMap frequency check of substring)
