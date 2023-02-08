@@ -18,14 +18,17 @@ public class LinkedList{
         // testing print functions
         // -----------------------
         printList(list);
-
-        // deletion test
-        deletionByValue(list, 7);
         System.out.println();
+        //recursivePrint(list.head);
+        list = reverseList(list);
         printList(list);
-        deletionByPosition(list, 20);
-        System.out.println();
-        printList(list);
+        // ----------- deletion test -----------
+//        deletionByValue(list, 7);
+//        System.out.println();
+//        printList(list);
+//        deletionByPosition(list, 20);
+//        System.out.println();
+//        printList(list);
         //recursivePrint(list.head);
 
     }
@@ -145,4 +148,22 @@ public class LinkedList{
         }
         return list;
     }
+
+    public static LinkedList reverseList(LinkedList list){
+        // going to basically use recursion
+        // we need a new list to return
+        LinkedList retList = new LinkedList();
+        recursiveInt(retList, list.head);
+        return retList;
+    }
+
+    public static void recursiveInt(LinkedList newList, Node head){
+        // basically the recursive print function
+        Node currentNode = head;
+        if(currentNode == null) return;
+        recursiveInt(newList, currentNode.next);
+        insert(newList, currentNode.data);
+    }
+
+
 }
