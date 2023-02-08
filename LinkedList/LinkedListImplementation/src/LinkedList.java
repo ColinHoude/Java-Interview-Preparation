@@ -20,8 +20,21 @@ public class LinkedList{
         printList(list);
         System.out.println();
         //recursivePrint(list.head);
-        list = reverseList(list);
-        printList(list);
+//        list = reverseList(list);
+//        printList(list);
+
+        // testing merge function
+        LinkedList list2 = new LinkedList();
+        for(int i = 0; i < 11; i++){
+            insert(list2, i);
+        }
+
+        printList(list2);
+        System.out.println();
+        LinkedList mergedList = new LinkedList();
+        mergedList = mergeTwoSortedLists(list, list2);
+        printList(mergedList);
+        System.out.println();
         // ----------- deletion test -----------
 //        deletionByValue(list, 7);
 //        System.out.println();
@@ -29,7 +42,6 @@ public class LinkedList{
 //        deletionByPosition(list, 20);
 //        System.out.println();
 //        printList(list);
-        //recursivePrint(list.head);
 
     }
     Node head;
@@ -163,6 +175,25 @@ public class LinkedList{
         if(currentNode == null) return;
         recursiveInt(newList, currentNode.next);
         insert(newList, currentNode.data);
+    }
+
+    public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2){
+        // create a new list to return
+        LinkedList retList = new LinkedList();
+        Node currentl1 = l1.head;
+        Node currentl2 = l2.head;
+        while(currentl1 != null || currentl2 != null){
+            if(currentl1 != null && (currentl1.data <= currentl2.data)){
+                insert(retList, currentl1.data);
+                currentl1 = currentl1.next;
+            }
+            else {
+                insert(retList, currentl2.data);
+                currentl2 = currentl2.next;
+            }
+        }
+
+        return retList;
     }
 
 
