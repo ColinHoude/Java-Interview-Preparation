@@ -45,5 +45,7 @@ This is my journey to become fluent enough with Java to land a software engineer
 
 <b>LinkedList</b>
 - Base implementation (standard LinkedList with data<int>)
+    - has these functions below built into this file
+    - Reverse LinkedList
+    - Merge Two LinkedLists
 - LinkedList to Array (very basic) 
-- Reverse LinkedList
