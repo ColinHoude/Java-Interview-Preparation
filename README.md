@@ -45,3 +45,4 @@ This is my journey to become fluent enough with Java to land a software engineer
 
 <b>LinkedList</b>
 - Base implementation (standard LinkedList with data<int>)
+- LinkedList to Array (very basic) 
