@@ -42,3 +42,6 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Longest Unique Substring
 - Longest Repeating Character Replacement (can be optimized)
 - Short Permutation in a Long String (HashMap frequency check of substring)
+
+<b>LinkedList</b>
+- Base implementation (standard LinkedList with data<int>)
