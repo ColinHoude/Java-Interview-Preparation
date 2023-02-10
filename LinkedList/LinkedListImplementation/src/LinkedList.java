@@ -25,19 +25,14 @@ public class LinkedList{
 //        printList(list);
 
         // testing merge function
-        LinkedList list2 = new LinkedList();
-        for(int i = 10; i > 0; i--){
-            insert(list2, i);
-        }
-
-        printList(list2);
-        System.out.println();
-        LinkedList mergedList = mergeTwoUnsortedList(list, list2);
-        printList(mergedList);
+//        LinkedList list2 = new LinkedList();
+//        for(int i = 10; i > 0; i--){
+//            insert(list2, i);
+//        }
         System.out.println();
 
         // testing Reorder List Leetcode problem
-
+        reorderList(list);
     }
     Node head;
     static class Node{
@@ -205,8 +200,9 @@ public class LinkedList{
         LinkedList retList = new LinkedList();
         Node currentl1 = l1.head;
         Node currentl2 = l2.head;
+        int counter = 0;
         while(currentl1 != null || currentl2 != null){
-            if(currentl1 != null){
+            if(currentl1 != null && counter %2 == 0){
                 insert(retList, currentl1.data);
                 currentl1 = currentl1.next;
             }
@@ -214,6 +210,7 @@ public class LinkedList{
                 insert(retList, currentl2.data);
                 currentl2 = currentl2.next;
             }
+            counter++;
         }
 
         return retList;
@@ -222,15 +219,45 @@ public class LinkedList{
     public static void reorderList(LinkedList list){
         // going to converge on the middle
         // need to first find the middle
-        Node slow = list.head, fast = list.head, prev = null;
-        while(fast != null && fast.next != null){
-            // for every one slow goes next to -- fast goes 2x next
-            // hence slow = 1/2 fast and when fast reaches the end slow will be at the middle of the list
-            slow = slow.next;
-            fast = fast.next.next;
+        if(list.head == null) return;
+//        Node slow = list.head, fast = list.head, prev = null;
+//        while(fast != null && fast.next != null){
+//            // for every one slow goes next to -- fast goes 2x next
+//            // hence slow = 1/2 fast and when fast reaches the end slow will be at the middle of the list
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+
+        // make 2 seperate lists
+        LinkedList firstHalf = new LinkedList();
+        LinkedList secondHalf = new LinkedList();
+        int counter = 0;
+        int sizeOfList = size(list);
+        Node currentNode = list.head;
+        while(currentNode != null){
+            if(counter < sizeOfList /2){
+                // this is the first half
+                insert(firstHalf, currentNode.data);
+            }
+            else {
+                insert(secondHalf, currentNode.data);
+            }
+            counter++;
+            currentNode = currentNode.next;
         }
 
-        // make a new list that stores the 
+        // now we have two separate lists of the first and second half
+        // reverse the 2nd half list
+        secondHalf = reverseList(secondHalf);
+        printList(firstHalf);
+        System.out.println();
+        printList(secondHalf);
+        // now merge them together
+        firstHalf = mergeTwoUnsortedList(firstHalf, secondHalf);
+        // first half is the answer to the problem
+        System.out.println();
+        printList(firstHalf);
+    }
 
 
 }
