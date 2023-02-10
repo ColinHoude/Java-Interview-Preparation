@@ -217,16 +217,14 @@ public class LinkedList{
     }
 
     public static void reorderList(LinkedList list){
-        // going to converge on the middle
-        // need to first find the middle
+        // to solve this problem I:
+            // made two separate Lists
+            // first half list
+            // second half list
+        // reversed the second half
+        // merged the first and second half lists together
+
         if(list.head == null) return;
-//        Node slow = list.head, fast = list.head, prev = null;
-//        while(fast != null && fast.next != null){
-//            // for every one slow goes next to -- fast goes 2x next
-//            // hence slow = 1/2 fast and when fast reaches the end slow will be at the middle of the list
-//            slow = slow.next;
-//            fast = fast.next.next;
-//        }
 
         // make 2 seperate lists
         LinkedList firstHalf = new LinkedList();
