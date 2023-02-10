@@ -19,29 +19,24 @@ public class LinkedList{
         // -----------------------
         printList(list);
         System.out.println();
+
         //recursivePrint(list.head);
 //        list = reverseList(list);
 //        printList(list);
 
         // testing merge function
         LinkedList list2 = new LinkedList();
-        for(int i = 0; i < 11; i++){
+        for(int i = 10; i > 0; i--){
             insert(list2, i);
         }
 
         printList(list2);
         System.out.println();
-        LinkedList mergedList = new LinkedList();
-        mergedList = mergeTwoSortedLists(list, list2);
+        LinkedList mergedList = mergeTwoUnsortedList(list, list2);
         printList(mergedList);
         System.out.println();
-        // ----------- deletion test -----------
-//        deletionByValue(list, 7);
-//        System.out.println();
-//        printList(list);
-//        deletionByPosition(list, 20);
-//        System.out.println();
-//        printList(list);
+
+        // testing Reorder List Leetcode problem
 
     }
     Node head;
@@ -80,6 +75,17 @@ public class LinkedList{
             // move to the next node
             currentNode = currentNode.next;
         }
+    }
+
+    public static int size(LinkedList list){
+        int size = 0;
+        Node currentNode = list.head;
+        if(currentNode == null) return 0;
+        while(currentNode != null){
+            size++;
+            currentNode = currentNode.next;
+        }
+        return size;
     }
 
     public static void recursivePrint(Node head){
@@ -195,6 +201,36 @@ public class LinkedList{
 
         return retList;
     }
+    public static LinkedList mergeTwoUnsortedList(LinkedList l1, LinkedList l2){
+        LinkedList retList = new LinkedList();
+        Node currentl1 = l1.head;
+        Node currentl2 = l2.head;
+        while(currentl1 != null || currentl2 != null){
+            if(currentl1 != null){
+                insert(retList, currentl1.data);
+                currentl1 = currentl1.next;
+            }
+            else {
+                insert(retList, currentl2.data);
+                currentl2 = currentl2.next;
+            }
+        }
+
+        return retList;
+    }
+
+    public static void reorderList(LinkedList list){
+        // going to converge on the middle
+        // need to first find the middle
+        Node slow = list.head, fast = list.head, prev = null;
+        while(fast != null && fast.next != null){
+            // for every one slow goes next to -- fast goes 2x next
+            // hence slow = 1/2 fast and when fast reaches the end slow will be at the middle of the list
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // make a new list that stores the 
 
 
 }
