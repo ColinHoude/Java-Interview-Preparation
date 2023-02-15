@@ -11,15 +11,21 @@ public class LinkedList{
         // array indie = linked list node
         // array data must all be stored next to each other in memory
         LinkedList list = new LinkedList();
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < 4; i++) {
             insert(list, i);
         }
+        LinkedList list2 = new LinkedList();
+        for (int i = 2; i < 5; i++) {
+            insert(list2, i);
+        }
+
 
         // testing print functions
         // -----------------------
         printList(list);
         System.out.println();
-
+        printList(list2);
+        System.out.println();
         //recursivePrint(list.head);
 //        list = reverseList(list);
 //        printList(list);
@@ -29,10 +35,13 @@ public class LinkedList{
 //        for(int i = 10; i > 0; i--){
 //            insert(list2, i);
 //        }
-        System.out.println();
+
 
         // testing Reorder List Leetcode problem
-        reorderList(list);
+//        reorderList(list);
+
+        // testing addTwoNumber
+        addTwoNumber(list, list2);
     }
     Node head;
     static class Node{
@@ -257,5 +266,19 @@ public class LinkedList{
         printList(firstHalf);
     }
 
+    public static void addTwoNumber(LinkedList l1, LinkedList l2){
+        // reverse both lists
+        LinkedList retList = new LinkedList();
+        LinkedList curr = retList;
+        int carry = 0;
+        while(l1 != null || l2 != null || carry != 1){
+            int x = (l1 != null) ? l1.head.data: 0;
+            int y = (l1 != null) ? l2.head.data: 0;
+            int sum = x + y + carry;
+            curr.head = curr.head.next;
+
+        }
+
+    }
 
 }
