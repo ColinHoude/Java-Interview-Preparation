@@ -47,10 +47,12 @@ This is my journey to become fluent enough with Java to land a software engineer
 <b>LinkedList</b>
 - Base implementation (standard LinkedList with data<int>)
     - has these functions below built into this file
-    - Reverse LinkedList
-    - Merge Two LinkedLists Sorterd
-    - Merge Two List Alternative
-    - Size function
+- Reverse LinkedList
+- Merge Two LinkedLists Sorterd
+- Merge Two List Alternative
+- Size function
 - LinkedList to Array (very basic) 
 - Reorder List
 - Add Two Linked List 
+- Sum of all Values
+- Get Value at index
