@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class LinkedList{
     public static void main(String[] args) {
         // made up of many Nodes
@@ -10,22 +12,20 @@ public class LinkedList{
         // very similar to Array;
         // array indie = linked list node
         // array data must all be stored next to each other in memory
-        LinkedList list = new LinkedList();
-        for (int i = 1; i < 4; i++) {
-            insert(list, 9);
-        }
         LinkedList list2 = new LinkedList();
-        for (int i = 2; i < 6; i++) {
-            insert(list2, 9);
+        Random rand = new Random();
+        int randInt;
+        for (int i = 0; i < 25; i++) {
+            randInt = rand.nextInt(1,20);
+            insert(list2, randInt);
         }
 
 
         // testing print functions
         // -----------------------
-        printList(list);
-        System.out.println();
         printList(list2);
         System.out.println();
+
         //recursivePrint(list.head);
 //        list = reverseList(list);
 //        printList(list);
@@ -41,7 +41,11 @@ public class LinkedList{
 //        reorderList(list);
 
         // testing addTwoNumber
-        addTwoNumber(list, list2);
+        //addTwoNumber(list, list2);
+
+        // testing sum function of one list
+        //sumNumbers(list2);
+        getValueAtIndex(list2, 10);
     }
     Node head;
     static class Node{
@@ -306,6 +310,41 @@ public class LinkedList{
         // print answer
         printList(retList);
 
+    }
+
+    public static void sumNumbers(LinkedList l1){
+        int sum = 0;
+        while(l1.head != null){
+            sum += l1.head.data;
+            if(l1.head.next == null){
+                break;
+            }
+            else
+                l1.head = l1.head.next;
+        }
+        System.out.println("Sum of all values in this LinkedList = " + sum);
+    }
+
+    public static void getValueAtIndex(LinkedList l1, int index){
+        if(index <= 0){
+            System.out.println("null");
+        }
+        int startVal = 0;
+        Node currNode = l1.head;
+        while(currNode != null){
+            if(startVal == index){
+                System.out.println(currNode.data);
+                break;
+            }
+
+            if(currNode.next == null){
+                break;
+            }
+            else {
+                startVal++;
+                currNode = currNode.next;
+            }
+        }
     }
 
 }
