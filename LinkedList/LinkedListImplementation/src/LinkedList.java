@@ -12,11 +12,11 @@ public class LinkedList{
         // array data must all be stored next to each other in memory
         LinkedList list = new LinkedList();
         for (int i = 1; i < 4; i++) {
-            insert(list, i);
+            insert(list, 9);
         }
         LinkedList list2 = new LinkedList();
-        for (int i = 2; i < 5; i++) {
-            insert(list2, i);
+        for (int i = 2; i < 6; i++) {
+            insert(list2, 9);
         }
 
 
@@ -268,16 +268,43 @@ public class LinkedList{
 
     public static void addTwoNumber(LinkedList l1, LinkedList l2){
         // reverse both lists
+        l1 = reverseList(l1);
+        l2 = reverseList(l2);
+        // create a new list to store answer
         LinkedList retList = new LinkedList();
-        LinkedList curr = retList;
         int carry = 0;
-        while(l1 != null || l2 != null || carry != 1){
-            int x = (l1 != null) ? l1.head.data: 0;
-            int y = (l1 != null) ? l2.head.data: 0;
+
+        while(l1.head != null || l2.head != null){
+            int x = (l1.head != null) ? l1.head.data: 0;
+            int y = (l1.head != null) ? l2.head.data: 0;
             int sum = x + y + carry;
-            curr.head = curr.head.next;
+            if(sum >= 10){
+                carry = 1;
+                insert(retList, (sum -10));
+            }
+            else {
+                carry = 0;
+                insert(retList, sum);
+            }
+
+            // move the heads
+            if(l1.head.next != null && l2.head.next != null){
+                l1.head = l1.head.next;
+                l2.head = l2.head.next;
+            }
+            else{
+             break;
+            }
 
         }
+
+        if(carry == 1){
+            insert(retList, 1);
+        }
+        // reverse retList
+        retList = reverseList(retList);
+        // print answer
+        printList(retList);
 
     }
 
