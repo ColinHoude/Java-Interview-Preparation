@@ -56,3 +56,7 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Add Two Linked List 
 - Sum of all Values
 - Get Value at index
+
+<b>Tree</b>
+- Invert tree 
+- Sorted Array to TreeNode 
