@@ -9,12 +9,24 @@ public class TreeNode {
             listToTree.add(i);
         }
         System.out.println(listToTree);
+        // rebalancing is built into the listToTree function -- just pass new list into it
         TreeNode root = listToTree(listToTree, 0, listToTree.size()-1);
         printTree(root);
         System.out.println();
+        printCurrentNode(root);
+        for (int i = 6; i < 11; i++) {
+            listToTree.add(i);
+        }
+        System.out.println(listToTree);
+        root = listToTree(listToTree, 0, listToTree.size()-1);
+        printTree(root);
+        System.out.println();
+        printCurrentNode(root);
         //searchForValue(root, 6);
-        List<Integer> rebalanceTree = treeToList(root);
-        System.out.println(rebalanceTree);
+//        List<Integer> rebalanceTree = treeToList(root);
+//        Collections.shuffle(rebalanceTree);
+//        System.out.println(rebalanceTree);
+
     }
 
     int val;
@@ -143,7 +155,12 @@ public class TreeNode {
     }
 
     public static void printCurrentNode(TreeNode root){
-        System.out.println("The current nodes value is -- " + root.val);
+        System.out.println("The current top node value is -- " + root.val);
     }
+
+//    public static TreeNode rebalance(TreeNode root){
+//     // rebalancing a root
+//
+//    }
 
 }
