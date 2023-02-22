@@ -11,6 +11,7 @@ public class TreeNode {
         System.out.println(listToTree);
         TreeNode root = listToTree(listToTree, 0, listToTree.size()-1);
         printTree(root);
+        searchForValue(root, 6);
     }
 
     int val;
@@ -61,6 +62,47 @@ public class TreeNode {
         root.right = listToTree(x, mid + 1, right);
         return root;
     }
+
+    public static void searchForValue(TreeNode root, int val){
+        // this is a basic search for value function of a BST
+        // not sure if a recursion call or a while loop would be better, probably a while loop
+        if(root == null) {
+            System.out.println("value never found...");
+        }
+        else if(root.val == val){
+            System.out.println("value found -- " + val);
+        }
+        // this is where recursion calls come in
+        else if(root.val > val){
+            // need a smaller value -- go to the left
+            searchForValue(root.left, val);
+        }
+        else {
+            // need a larger value
+            searchForValue(root.right, val);
+        }
+    }
+
+    public static void searchForValWhile(TreeNode root, int val){
+        // searching for val using a while loop instead of reccursion
+        while(root != null || root.val != val){
+            if(root.val > val){
+                root = root.left;
+            }
+            else
+                root = root.right;
+        }
+
+        if(root == null){
+            System.out.println("value never found -- " + val);
+        }
+
+        else
+            System.out.println("value found -- " + val);
+        
+
+    }
+
 
 
 
