@@ -11,7 +11,10 @@ public class TreeNode {
         System.out.println(listToTree);
         TreeNode root = listToTree(listToTree, 0, listToTree.size()-1);
         printTree(root);
-        searchForValue(root, 6);
+        System.out.println();
+        //searchForValue(root, 6);
+        List<Integer> rebalanceTree = treeToList(root);
+        System.out.println(rebalanceTree);
     }
 
     int val;
@@ -44,7 +47,17 @@ public class TreeNode {
         printTree(root.left);
         System.out.print(root.val + " ");
         printTree(root.right);
+    }
 
+    public static List<Integer> getAllTreeValue(TreeNode root, List<Integer> x){
+        // same as print but return the value
+        if(root == null) return x;
+        else{
+            getAllTreeValue(root.left, x);
+            getAllTreeValue(root.right, x);
+            x.add(root.val);
+        }
+        return x;
     }
 
     public static void insertNode(TreeNode root, int val){
@@ -99,11 +112,38 @@ public class TreeNode {
 
         else
             System.out.println("value found -- " + val);
-        
+
 
     }
 
+    public static void deleteValue(TreeNode root, int val){
+        // some complications of deletion
+            // has zero children
+            // has one child
+            // has two children
+        TreeNode temp = new TreeNode();
+        // traverse to the node of value
+        if(root == null){
+            System.out.println("value not in tree -- cant delete");
+            return;
+        }
 
+        if(root.val == val){
+            // this is where we delete
 
+        }
+    }
+
+    // this function is used to re-balance the tree
+    public static List<Integer> treeToList(TreeNode root){
+        List<Integer> retList = new ArrayList<>();
+        retList = getAllTreeValue(root, retList);
+        Collections.sort(retList);
+        return retList;
+    }
+
+    public static void printCurrentNode(TreeNode root){
+        System.out.println("The current nodes value is -- " + root.val);
+    }
 
 }
