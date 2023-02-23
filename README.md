@@ -62,3 +62,6 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Sorted Array to TreeNode 
 - Print tree (id like to format this somehow) 
 - Search for value
+- Max Depth 
+- Largest Diameter of Tree
+- Is the Tree Balanced (boolean) 
