@@ -22,6 +22,8 @@ public class TreeNode {
         printTree(root);
         System.out.println();
         printCurrentNode(root);
+        System.out.println(MaxDepth(root));
+        System.out.println(diameterOfTree(root));
         //searchForValue(root, 6);
 //        List<Integer> rebalanceTree = treeToList(root);
 //        Collections.shuffle(rebalanceTree);
@@ -158,9 +160,19 @@ public class TreeNode {
         System.out.println("The current top node value is -- " + root.val);
     }
 
-//    public static TreeNode rebalance(TreeNode root){
-//     // rebalancing a root
-//
-//    }
+    public static int MaxDepth(TreeNode root){
+        // return the maximum depth;
+        // maximum depth  == the number of nodes along the longest path from the root node down to the farthest leaf node.
+        if(root == null) return 0;
+        int left = MaxDepth(root.left);
+        int right = MaxDepth(root.right);
+        return Math.max(left, right) + 1;
+    }
+
+    public static int diameterOfTree(TreeNode root){
+        return (MaxDepth(root.left) + MaxDepth(root.right));
+    }
+
+
 
 }
