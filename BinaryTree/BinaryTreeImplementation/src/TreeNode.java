@@ -170,7 +170,24 @@ public class TreeNode {
     }
 
     public static int diameterOfTree(TreeNode root){
-        return (MaxDepth(root.left) + MaxDepth(root.right));
+        int left = MaxDepth(root.left);
+        int right = MaxDepth(root.right);
+
+        System.out.println("maxDepth of left: " + left);
+        System.out.println("maxDepth of right: " + right);
+        return (left + right);
+    }
+
+    public static boolean isTreeBalanced(TreeNode root){
+        if(root == null) return true;
+        int left = heightOfTree(root.left);
+        int right = heightOfTree(root.right);
+        return ((Math.max(left, right) - Math.min(left, right) < 2)) && isTreeBalanced(root.left) && isTreeBalanced(root.right);
+    }
+
+    public static int heightOfTree(TreeNode root){
+        if(root == null) return 0;
+        return Math.max(heightOfTree(root.left), heightOfTree(root.right)) +1;
     }
 
 
