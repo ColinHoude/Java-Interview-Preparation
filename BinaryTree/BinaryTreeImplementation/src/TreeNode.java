@@ -110,6 +110,23 @@ public class TreeNode {
         }
     }
 
+    public static boolean searchForValue2(TreeNode root, TreeNode subTree){
+        // this is a basic search for value function of a BST
+        // not sure if a recursion call or a while loop would be better, probably a while loop
+        if(root == null) {
+            return false;
+        }
+
+        if(root.val == subTree.val){
+            return isSameTree(root, subTree);
+        }
+
+        return searchForValue2(root.left, subTree) || searchForValue2(root.right, subTree);
+    }
+
+
+
+
     public static void searchForValWhile(TreeNode root, int val){
         // searching for val using a while loop instead of reccursion
         while(root != null || root.val != val){
@@ -190,6 +207,15 @@ public class TreeNode {
         return Math.max(heightOfTree(root.left), heightOfTree(root.right)) +1;
     }
 
+    public static boolean isSameTree(TreeNode p, TreeNode q){
+        // must check every node of each
+        // they are false when
+            // value != each other
+            // when one node has a child and the other does not
+        if(p == null && q == null) return true;
+        if((q == null || p == null) || (p.val != q.val))return false;
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
 
 
 }
