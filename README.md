@@ -65,3 +65,5 @@ This is my journey to become fluent enough with Java to land a software engineer
 - Max Depth 
 - Largest Diameter of Tree
 - Is the Tree Balanced (boolean) 
+
+<b>PriorityQueue</b>
