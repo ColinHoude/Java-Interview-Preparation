@@ -52,9 +52,28 @@ public class Trie {
         return wordSearch.isWord;
     }
 
+    public void printTrie(TrieNode root){
+        System.out.println(Arrays.toString(root.children));
+    }
+
+    public void printWordTrie(String word){
+        TrieNode wordSearch = root;
+        for (int i = 0; i < word.length(); i++) {
+            char temp = word.charAt(i);
+            // check if that letter is already present in the tree
+            if(wordSearch.children[temp - 'a'] == null){
+                return;
+            }
+            printTrie(wordSearch);
+            wordSearch = wordSearch.children[temp - 'a'];
+        }
+    }
 
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Trie t = new Trie();
+        t.insert("boob");
+        boolean isPresent = t.search("boob");
+        System.out.println(isPresent);
     }
 }
