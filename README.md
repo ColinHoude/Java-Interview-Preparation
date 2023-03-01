@@ -68,3 +68,10 @@ This is my journey to become fluent enough with Java to land a software engineer
 
 <b>PriorityQueue</b>
 - Kth Largest Element
+
+<b>Trie</b>
+- Implimentation with basic functions below: 
+    - Insert
+    - Search word
+    - Search prefix
+    - Delete
