@@ -69,11 +69,28 @@ public class Trie {
         }
     }
 
+    public void deleteWord(String word){
+        TrieNode wordSearch = root;
+        for (int i = 0; i < word.length(); i++) {
+            char temp = word.charAt(i);
+            // check if that letter is already present in the tree
+            if(wordSearch.children[temp - 'a'] == null){
+                return;
+            }
+            wordSearch = wordSearch.children[temp - 'a'];
+        }
+        wordSearch.isWord = false;
+        System.out.println("deleted: " + word);
+    }
+
 
     public static void main(String[] args) {
         Trie t = new Trie();
         t.insert("boob");
         boolean isPresent = t.search("boob");
+        System.out.println(isPresent);
+        t.deleteWord("boob");
+        isPresent = t.search("boob");
         System.out.println(isPresent);
     }
 }
