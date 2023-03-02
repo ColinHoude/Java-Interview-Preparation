@@ -78,3 +78,4 @@ This is my journey to become fluent enough with Java to land a software engineer
     
 <b>Graphs</b>
 - Number of Islands (DFS)
+- Max Area of Island (DFS)
