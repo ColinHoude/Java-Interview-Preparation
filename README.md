@@ -75,3 +75,6 @@ This is my journey to become fluent enough with Java to land a software engineer
     - Search word
     - Search prefix
     - Delete
+    
+<b>Graphs</b>
+- Number of Islands (DFS)
