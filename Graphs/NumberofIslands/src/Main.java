@@ -34,6 +34,5 @@ public class Main {
         clearGrid(grid, i, j+1);
         clearGrid(grid, i-1, j);
         clearGrid(grid, i, j-1);
-        return;
     }
 }
